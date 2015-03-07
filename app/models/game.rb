@@ -51,11 +51,10 @@ class Game < ActiveRecord::Base
 
   def over?
     number_of_quiz_questions == number_of_questions_answered
-    
   end
 
   def current_quiz_question
-    quiz.quiz_questions[number_of_questions_answered] if all_participants_answered? && !over?
+    quiz.quiz_questions[number_of_questions_answered] if !over?
   end
 
 
